@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _printf - function like printf
@@ -10,9 +11,8 @@ int _printf(const char *format, ...)
 {
 	va_list l_arg;
 	int i = 0, j, f, len_container = 0, size_output;
-	char *container;
-	int last_output = 0;
-	char output[500];
+	int handle_size_output = 0, last_output = 0;
+	char *container, output[500];
 	char *(*specif_func)(va_list) = NULL;
 
 	if (!format)
@@ -25,28 +25,27 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-				for (j = 0; format[i] == ' '; j++, i++)
-					if (format[i + 1] == '\0')
+				for (j = 0; format[i] == ' ' || format[i] == '\0'; j++, i++)
+					if (format[i + 1] == '\0' || format[i] == '\0')
+					{
+						_puts(output, _strlen(output));
 						return (-1);
+					}
 			specif_func = get_specif_func(format[i]);
 			container = (specif_func) ? specif_func(l_arg) : notexist_specif(format[i]);
-			if (container)
-			{
-				len_container = _strlen(container);
-				_memcpy(output, container, len_container, last_output);
-				last_output += len_container;
-			}
+			len_container = _strlen(container);
+			handle_size_output = (len_container == 0 && format[i] == 'c') ? 1 : 0;
+			_memcpy(output, container, len_container, last_output);
+			last_output += len_container;
 		}
 		else
 		{
-			container = chartos(format[i]);
-			_memcpy(output, container, 1, last_output);
+			_memcpy(output, chartos(format[i]), 1, last_output);
 			last_output += 1;
 		};
 		i++;
 	};
-	size_output = _puts(output, _strlen(output));
+	size_output = _puts(output, _strlen(output) + handle_size_output);
 	va_end(l_arg);
 	return (size_output);
 }
-
