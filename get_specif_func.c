@@ -13,6 +13,8 @@ char *(*get_specif_func(char s))(va_list)
 		{"c", char_specif},
 		{"s", string_specif},
 		{"%", percent_specif},
+		{"i", integer_specif},
+		{"d", integer_specif},
 		{NULL, NULL}
 	};
 

@@ -60,3 +60,34 @@ char *notexist_specif(char c)
 	return (pnt);
 }
 
+char *integer_specif(va_list npnt)
+{
+	int nmb;
+	int i, reset, temp, expo, count;
+	char *str;
+
+	nmb = va_arg(npnt, int);
+	count = i = 0;
+	expo = 1;
+	if (nmb >= 0)
+		reset = nmb * -1;
+	else
+		reset = nmb, count++;
+	temp = reset;
+
+	for (i = 0; temp <= -10; count++)
+		expo *= 10, temp /= 10;
+
+	str = malloc((count + 1) * sizeof(char));
+
+	if (str == NULL)
+		return (NULL);
+	if (nmb < 0)
+		str[i++] = '-';
+	while (expo >= 1)
+	{
+		str[i++] = (((reset / expo) % 10) * -1 + '0');
+		expo /= 10;
+	}
+	return (str);
+}
