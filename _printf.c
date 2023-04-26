@@ -32,11 +32,7 @@ int _printf(const char *format, ...)
 					_puts(output, _strlen(output));
 					return (-1);
 				};
-				if (format[i] == ' ' && format[i + 1] != ' ')
-					h_space++;
 			}
-			for (f = 0; f < h_space && (format[i] == 'd' || format[i] == 'i'); f++)
-				_memcpy(output, chartos(' '), 1, last_output), last_output += 1;
 			specif_func = get_specif_func(format[i]);
 			container = (specif_func) ? specif_func(l_arg) : notexist_specif(format[i]);
 			len_container = _strlen(container);
