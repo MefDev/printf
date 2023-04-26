@@ -61,6 +61,13 @@ char *notexist_specif(char c)
 }
 
 
+/**
+ * integer_specif - print the integers
+ * @npnt: digit
+ * Return: pointer
+ */
+
+
 char *integer_specif(va_list npnt)
 {
 	int nmb;
