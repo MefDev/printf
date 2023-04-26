@@ -60,6 +60,7 @@ char *notexist_specif(char c)
 	return (pnt);
 }
 
+
 char *integer_specif(va_list npnt)
 {
 	int nmb;
@@ -72,15 +73,14 @@ char *integer_specif(va_list npnt)
 	if (nmb >= 0)
 		reset = nmb * -1;
 	else
-		reset = nmb, count++;
+		reset = nmb;
 	temp = reset;
 
 	for (i = 0; temp <= -10; count++)
 		expo *= 10, temp /= 10;
 
 	str = malloc((count + 1) * sizeof(char));
-
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	if (nmb < 0)
 		str[i++] = '-';

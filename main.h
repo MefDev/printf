@@ -38,6 +38,7 @@ char *string_specif(va_list s);
 char *percent_specif(void);
 char *notexist_specif(char c);
 char *integer_specif(va_list npnt);
+char *handle_space(char c);
 
 
 #endif /** _MAIN_H */
