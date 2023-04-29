@@ -15,6 +15,7 @@ char *(*get_specif_func(char s))(va_list)
 		{"%", percent_specif},
 		{"i", integer_specif},
 		{"d", integer_specif},
+		{"b", binary_specif},
 		{NULL, NULL}
 	};
 

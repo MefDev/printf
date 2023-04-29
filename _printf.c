@@ -31,7 +31,9 @@ int _printf(const char *format, ...)
 				{
 					_puts(output, _strlen(output));
 					return (-1);
-				};
+				}
+				if (format[i + 1] != 'd')
+					_memcpy(output, chartos(format[i]), 1, last_output), last_output += 1;
 			}
 			specif_func = get_specif_func(format[i]);
 			container = (specif_func) ? specif_func(l_arg) : notexist_specif(format[i]);
