@@ -30,6 +30,7 @@ int _puts(const char *str, int size);
 int _strlen(const char *str);
 char *chartos(char c);
 char *_memcpy(char *dest, char *src, unsigned int n, unsigned int dest_len);
+char *rev_string(char *str);
 
 /** get specifiers function */
 char *(*get_specif_func(char str))(va_list);
@@ -41,6 +42,10 @@ char *percent_specif(void);
 char *notexist_specif(char c);
 char *integer_specif(va_list npnt);
 char *binary_specif(va_list nump);
+char *unsigned_specif(va_list unint);
+char *octal_specif(va_list num);
+char *hexa_specif(va_list hnum);
+char *Hexa_specif(va_list hnum);
 
 
 #endif /** _MAIN_H */

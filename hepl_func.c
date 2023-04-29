@@ -69,4 +69,29 @@ char *_memcpy(char *dest, char *src, unsigned int n, unsigned int dest_len)
 	return (dest);
 }
 
+/**
+ * rev_string - reverses string
+ * @str: string
+ *
+ *return : string .
+ */
 
+char *rev_string(char *str)
+{
+	int len = 0;
+	int start, end, count;
+
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	len--;
+	for (count = 0; count <= len / 2; count++)
+	{
+		start = str[count];
+		end = str[len - count];
+		str[count] = end;
+		str[len - count] = start;
+	}
+	return (str);
+}

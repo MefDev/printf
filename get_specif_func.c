@@ -16,6 +16,10 @@ char *(*get_specif_func(char s))(va_list)
 		{"i", integer_specif},
 		{"d", integer_specif},
 		{"b", binary_specif},
+		{"u", unsigned_specif},
+		{"o", octal_specif},
+		{"x", hexa_specif},
+		{"X", Hexa_specif},
 		{NULL, NULL}
 	};
 
