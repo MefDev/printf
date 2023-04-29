@@ -24,7 +24,7 @@ typedef struct specif_types
 
 int _printf(const char *format, ...);
 
-/** function helpers */
+/** Those are function helpers */
 int _putchar(char c);
 int _puts(const char *str, int size);
 int _strlen(const char *str);
