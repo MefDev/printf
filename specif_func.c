@@ -62,7 +62,7 @@ char *notexist_specif(char c)
 
 
 /**
- * integer_specif - print the integers
+ * integer_specif - print all the integers
  * @npnt: digit
  * Return: pointer
  */
