@@ -7,7 +7,8 @@
 
 char *binary_specif(va_list nump)
 {
-	unsigned int nmb, newnmb, i, j;
+	unsigned int nmb, newnmb;
+    int i, j;
 	char *binaryPnt;
 	int binaryNum[32];
 
@@ -30,15 +31,14 @@ char *binary_specif(va_list nump)
 	}
 	if (!binaryPnt)
 		return (NULL);
-	i--;
-	for (j = 0; i > 0; j++, i--)
-	{
+    i--;
+	for (j = 0; i >= 0; j++, i--)
+    {
 		binaryPnt[j] = (binaryNum[i] + '0');
-		if (i == 1)
-		{
-			binaryPnt[j] = '\0';
-		}
-	}
+        if (i == 0)
+            binaryPnt[j] = (binaryNum[i] + '0');
+    }
+	binaryPnt[j] = '\0';
 
 	return (binaryPnt);
 }

@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#define SIZEBUF 1024
+
 /**
  * struct specif_types - Struct specifiers
  *

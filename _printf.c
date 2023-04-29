@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list l_arg;
 	int i = 0, j, f, len_container = 0, size_output;
 	int handle_size_output = 0, last_output = 0;
-	char *container, output[500];
+	char *container, output[SIZEBUF];
 	char *(*specif_func)(va_list) = NULL;
 
 	if (!format)
