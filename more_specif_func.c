@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * binary_specif - converts a string to binary
+ * binary_specif - Converts a string to binary
  * @nump: input string
  * Return: binary string
  */
