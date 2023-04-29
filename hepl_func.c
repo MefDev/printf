@@ -48,7 +48,7 @@ char *chartos(char c)
 
 
 /**
- * _memcpy - prints buffer in hexa
+ * _memcpy - Prints buffer in hexa
  * @dest: pointer buffer
  * @src: pointer buffer
  * @n: size
