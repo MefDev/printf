@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * binary_specif - converts a string to binary
+ * @nump: input string
+ * Return: binary string
+ */
 
 char *binary_specif(va_list nump)
 {
